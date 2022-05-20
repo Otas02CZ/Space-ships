@@ -6,6 +6,10 @@ onready var kamera = get_node("Hrac/Camera2D")
 onready var ohraniceni = get_node("Ohraniceni/OhraniceniKolize")
 onready var pozadi = get_node("Pozadi")
 var kameny
+var skore
+var herni_cas
+var max_zivotu
+var zivoty
 
 
 func _ready():
