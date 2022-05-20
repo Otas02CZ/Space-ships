@@ -24,10 +24,6 @@ config/name="Space-ships"
 run/main_scene="res://Sceny/Hra.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-Data="*res://Skripty/Data.gd"
-
 [display]
 
 window/size/width=640
