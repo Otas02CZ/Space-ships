@@ -17,3 +17,12 @@ polygon = PoolVector2Array( -0.426668, -7.96592, -8.10427, 3.72775, -1.29283, 1.
 
 [node name="Vystrely" type="Position2D" parent="."]
 position = Vector2( 8.59336, 0.0204854 )
+
+[node name="Oblast" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="Oblast_kolize" type="CollisionPolygon2D" parent="Oblast"]
+rotation = 1.5708
+polygon = PoolVector2Array( -0.426668, -7.96592, -8.10427, 3.72775, -1.29283, 1.91658, 7.88098, 3.96392 )
+
+[connection signal="area_entered" from="Oblast" to="." method="_on_Oblast_area_entered"]

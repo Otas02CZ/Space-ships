@@ -11,17 +11,18 @@ script = ExtResource( 3 )
 region_rect = Rect2( 0, 0, 0, 0 )
 
 [node name="Hrac" parent="." instance=ExtResource( 2 )]
-position = Vector2( 640, 330 )
+position = Vector2( 335, 145 )
 
 [node name="Camera2D" type="Camera2D" parent="Hrac"]
-position = Vector2( 21, 1 )
 current = true
+process_mode = 0
 limit_left = 0
 limit_top = 0
 limit_right = 1280
 limit_bottom = 760
 
 [node name="Ohraniceni" type="StaticBody2D" parent="."]
+visible = false
 
 [node name="OhraniceniKolize" type="CollisionPolygon2D" parent="Ohraniceni"]
 build_mode = 1
@@ -30,3 +31,22 @@ polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
 [node name="Projektily" type="Node2D" parent="."]
 
 [node name="Kameny" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="fps" type="Label" parent="CanvasLayer"]
+margin_left = 4.0
+margin_top = 2.0
+margin_right = 44.0
+margin_bottom = 16.0
+
+[node name="FPS_AKTUALIZACE" type="Timer" parent="."]
+wait_time = 0.1
+autostart = true
+
+[node name="NOVY_KAMEN" type="Timer" parent="."]
+autostart = true
+
+[connection signal="hit_kamen" from="Hrac" to="." method="_on_Hrac_hit_kamen"]
+[connection signal="timeout" from="FPS_AKTUALIZACE" to="." method="_on_FPS_AKTUALIZACE_timeout"]
+[connection signal="timeout" from="NOVY_KAMEN" to="." method="_on_NOVY_KAMEN_timeout"]
