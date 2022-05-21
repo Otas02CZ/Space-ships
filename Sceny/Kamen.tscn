@@ -33,6 +33,11 @@ process_material = SubResource( 1 )
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
+[node name="VypniKolizi" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
 [connection signal="area_entered" from="." to="." method="_on_Kamen_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Kamen_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="VypniKolizi" to="." method="_on_VypniKolizi_timeout"]

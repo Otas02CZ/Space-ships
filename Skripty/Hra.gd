@@ -7,6 +7,7 @@ export (float) var rotation_speed = 1.5
 export (int) var max_zivotu = 6
 # - predpripravene promenne odkazujici na poduzly uzlu Hra
 onready var map_size = Vector2(1920, 1080)
+var viewport = Vector2(640, 380)
 onready var hrac = get_node("Hrac")
 onready var kamera = get_node("Hrac/Camera2D")
 onready var ohraniceni = get_node("Ohraniceni/OhraniceniKolize")
@@ -53,6 +54,16 @@ func vytvor_kamen():
 		2 :
 			return kamen_3.instance()
 
+func vytvor_pozici_pro_kamen():
+	while true:
+		var x = randi() % int(map_size.x)
+		var y = randi() % int(map_size.y)
+		if abs(x-hrac.global_position.x)<viewport.x/2:
+			continue
+		if abs(y-hrac.global_position.y)<viewport.y/2:
+			continue
+		return Vector2(x, y)
+
 func _process(delta):
 	if aktualizuj_fps:
 		fps.text = str(int(1/delta))
@@ -66,6 +77,8 @@ func _on_FPS_AKTUALIZACE_timeout():
 func _on_NOVY_KAMEN_timeout():
 	var kamen = vytvor_kamen()
 	kamen.cilova_pozice = hrac.global_position
+	kamen.global_position = vytvor_pozici_pro_kamen()
+	kamen.limity = map_size
 	kameny.add_child(kamen)
 
 
