@@ -12,5 +12,5 @@ func _physics_process(delta):
 func _on_Timer_timeout():
 	queue_free()
 	
-func _on_Projectile_area_entered(area):
+func _on_Projectile_area_entered(_area):
 	queue_free()

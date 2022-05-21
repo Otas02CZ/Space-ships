@@ -6,7 +6,7 @@ export (int) var speed = 200
 export (float) var rotation_speed = 1.5
 export (int) var max_zivotu = 6
 # - predpripravene promenne odkazujici na poduzly uzlu Hra
-onready var map_size = Vector2(1920, 1080)
+export (Vector2) onready var map_size = Vector2(1920, 1080)
 var viewport = Vector2(640, 380)
 onready var hrac = get_node("Hrac")
 onready var kamera = get_node("Hrac/Camera2D")
@@ -20,7 +20,8 @@ onready var kamen_2 = preload("res://Sceny/Kamen_2.tscn")
 onready var kamen_3 = preload("res://Sceny/Kamen_3.tscn")
 # - normalni promenne"
 var sestrelene_kameny = 0
-var skore
+var skore = 0
+var navyseni_skore = 100
 var herni_cas
 var zivoty
 var aktualizuj_fps = false
@@ -73,6 +74,8 @@ func _process(delta):
 func _on_FPS_AKTUALIZACE_timeout():
 	aktualizuj_fps = true
 
+func zvys_skore():
+	skore += navyseni_skore
 
 func _on_NOVY_KAMEN_timeout():
 	var kamen = vytvor_kamen()

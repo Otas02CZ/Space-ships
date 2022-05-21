@@ -34,5 +34,5 @@ func vystrel():
 	strela.transform = pozice.global_transform
 
 
-func _on_Oblast_area_entered(area):
+func _on_Oblast_area_entered(_area):
 	emit_signal("hit_kamen")

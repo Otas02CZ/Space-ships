@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Textures/vesmir_1.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/IBM_Plex_Mono_Regular.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Fonts/IBM_Plex_Mono_Regular_Small.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Skripty/Uvitani.gd" type="Script" id=4]
+
+[node name="Uvitani" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Pozadi" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 640, 380 )
+
+[node name="Uvod" type="Label" parent="."]
+margin_left = 93.0
+margin_top = 41.0
+margin_right = 549.0
+margin_bottom = 83.0
+custom_fonts/font = ExtResource( 2 )
+text = "Welcome to Space - ships"
+align = 1
+valign = 1
+
+[node name="Zapni" type="Button" parent="."]
+margin_left = 284.0
+margin_top = 276.0
+margin_right = 372.0
+margin_bottom = 324.0
+custom_fonts/font = ExtResource( 2 )
+text = "PLAY"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 122.0
+margin_top = 95.0
+margin_right = 551.0
+margin_bottom = 219.0
+custom_fonts/font = ExtResource( 3 )
+text = "An asteroid-like space shooter. 
+ - shoot with space
+ - rotate a/s or right/left
+ - move front back with w/s or front/back"
+autowrap = true
+
+[connection signal="pressed" from="Zapni" to="." method="_on_Zapni_pressed"]
