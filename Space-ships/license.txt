@@ -1,0 +1,15 @@
+explosion by Kutenjikov
+ - CC0
+ - https://opengameart.org/content/explosion-8
+ - explosion.wav
+
+Stereotypical 90's space shooter music
+ - by Jan125
+ - OGA-BY 3.0
+ - boss.ogg
+ - https://opengameart.org/content/stereotypical-90s-space-shooter-music
+
+Laser Fire by dklon
+ - CC-BY 3.0
+ - laser1.wav
+ - https://opengameart.org/content/laser-fire

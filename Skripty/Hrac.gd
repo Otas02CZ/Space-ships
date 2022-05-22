@@ -22,6 +22,7 @@ func get_input():
 		velocity = Vector2(speed, 0).rotated(rotation)
 	if Input.is_action_pressed("strileni"):
 		vystrel()
+		Audio.hraj_strilej()
 	if Input.is_action_pressed("exit"):
 		get_tree().quit()
 
