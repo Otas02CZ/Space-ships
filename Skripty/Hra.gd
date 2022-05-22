@@ -11,24 +11,32 @@ var viewport = Vector2(640, 380)
 onready var hrac = get_node("Hrac")
 onready var kamera = get_node("Hrac/Camera2D")
 onready var ohraniceni = get_node("Ohraniceni/OhraniceniKolize")
-onready var pozadi = get_node("Pozadi")
-onready var fps = get_node("CanvasLayer/fps")
+onready var pozadi_1 = get_node("ScrollovaciPozadi/Vrstva_1/Textura_1")
+onready var pozadi_2 = get_node("ScrollovaciPozadi/Vrstva_2/Textura_2")
+onready var pozadi_3 = get_node("ScrollovaciPozadi/Vrstva_3/Textura_3")
+onready var pozadi_4 = get_node("ScrollovaciPozadi/Vrstva_4/Textura_4")
+onready var vrstva_1 = get_node("ScrollovaciPozadi/Vrstva_1")
+onready var vrstva_2 = get_node("ScrollovaciPozadi/Vrstva_2")
+onready var vrstva_3 = get_node("ScrollovaciPozadi/Vrstva_3")
+onready var vrstva_4 = get_node("ScrollovaciPozadi/Vrstva_4")
 onready var kameny = get_node("Kameny")
 # - predpripravene promenne prednactenych kamenu
 onready var kamen_1 = preload("res://Sceny/Kamen_1.tscn")
 onready var kamen_2 = preload("res://Sceny/Kamen_2.tscn")
 onready var kamen_3 = preload("res://Sceny/Kamen_3.tscn")
 # - normalni promenne"
-var sestrelene_kameny = 0
-var skore = 0
-var navyseni_skore = 100
-var herni_cas
 var zivoty
-var aktualizuj_fps = false
 
 func nastav_hru():
 	hrac.global_position = Vector2(map_size.x/2, map_size.y/2)
-	pozadi.set_region_rect(Rect2(Vector2.ZERO, map_size))
+	pozadi_1.set_region_rect(Rect2(Vector2.ZERO, map_size))
+	pozadi_2.set_region_rect(Rect2(Vector2.ZERO, map_size))
+	pozadi_3.set_region_rect(Rect2(Vector2.ZERO, map_size))
+	pozadi_4.set_region_rect(Rect2(Vector2.ZERO, map_size))
+	vrstva_1.set_mirroring(map_size)
+	vrstva_2.set_mirroring(map_size)
+	vrstva_3.set_mirroring(map_size)
+	vrstva_4.set_mirroring(map_size)
 	var polygon = PoolVector2Array()
 	polygon.append(Vector2.ZERO)
 	polygon.append(Vector2(0, map_size.y))
@@ -45,6 +53,8 @@ func nastav_hru():
 func _ready():
 	nastav_hru()
 	zivoty = max_zivotu
+	$CanvasLayer/ZivotyHodnota.text = str(zivoty)
+	Skore.vynuluj_skore()
 
 func vytvor_kamen():
 	match randi() % 3:
@@ -65,18 +75,6 @@ func vytvor_pozici_pro_kamen():
 			continue
 		return Vector2(x, y)
 
-func _process(delta):
-	if aktualizuj_fps:
-		fps.text = str(int(1/delta))
-		aktualizuj_fps = false
-
-
-func _on_FPS_AKTUALIZACE_timeout():
-	aktualizuj_fps = true
-
-func zvys_skore():
-	skore += navyseni_skore
-
 func _on_NOVY_KAMEN_timeout():
 	var kamen = vytvor_kamen()
 	kamen.cilova_pozice = hrac.global_position
@@ -87,5 +85,6 @@ func _on_NOVY_KAMEN_timeout():
 
 func _on_Hrac_hit_kamen():
 	zivoty -= 1
+	$CanvasLayer/ZivotyHodnota.text = str(zivoty)
 	if (zivoty==0):
-		print("PROHRA")
+		get_tree().change_scene("res://Sceny/Dokonceni.tscn")

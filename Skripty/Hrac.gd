@@ -22,6 +22,8 @@ func get_input():
 		velocity = Vector2(speed, 0).rotated(rotation)
 	if Input.is_action_pressed("strileni"):
 		vystrel()
+	if Input.is_action_pressed("exit"):
+		get_tree().quit()
 
 func _physics_process(delta):
 	get_input()

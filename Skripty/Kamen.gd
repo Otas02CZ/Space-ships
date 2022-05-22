@@ -4,7 +4,6 @@ var rychlost = 950
 onready var efekty = get_node("Efekty")
 onready var zapni_efekty = get_node("ZapniEfekty")
 onready var textura = get_node("Textura")
-onready var kolize = get_node("Kolize")
 var limity = Vector2.ZERO
 var cilova_pozice = Vector2.ZERO
 var velocity
@@ -15,18 +14,17 @@ func trefen_srazen():
 	moving = false
 	efekty.emitting = true
 	set_deferred("monitorable", false)
+	set_deferred("monitoring", false)
 	zapni_efekty.start()
 	textura.visible = false
 
-func _on_Kamen_area_entered(_area):
+func _on_Kamen_area_entered(area):
 	trefen_srazen()
-	$"/root/Hra".zvys_skore()
+	if area.get_collision_layer()!=1:
+		Skore.zvys_skore()
 
 func _on_Timer_timeout():
 	queue_free()
-
-func _on_Kamen_body_entered(_body):
-	trefen_srazen()
 
 func _physics_process(delta):
 	if moving:

@@ -1,0 +1,35 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/vesmir_3.png-fb93ddec7019a3e140ad760ec1d88ce3.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Textures/vesmir_3.png"
+dest_files=[ "res://.import/vesmir_3.png-fb93ddec7019a3e140ad760ec1d88ce3.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=1
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=false
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

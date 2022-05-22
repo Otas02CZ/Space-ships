@@ -24,6 +24,10 @@ config/name="Space-ships"
 run/main_scene="res://Sceny/Uvitani.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Skore="*res://Skripty/Skore.gd"
+
 [display]
 
 window/size/width=640

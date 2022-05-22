@@ -32,16 +32,17 @@ margin_bottom = 324.0
 custom_fonts/font = ExtResource( 2 )
 text = "PLAY"
 
-[node name="Label" type="Label" parent="."]
-margin_left = 122.0
-margin_top = 95.0
-margin_right = 551.0
-margin_bottom = 219.0
+[node name="Popisy" type="Label" parent="."]
+margin_left = 61.0
+margin_top = 105.0
+margin_right = 574.0
+margin_bottom = 229.0
 custom_fonts/font = ExtResource( 3 )
 text = "An asteroid-like space shooter. 
  - shoot with space
  - rotate a/s or right/left
- - move front back with w/s or front/back"
+ - move front back with w/s or front/back
+ - you have 6 lives, earn as much score as you can!"
 autowrap = true
 
 [connection signal="pressed" from="Zapni" to="." method="_on_Zapni_pressed"]
