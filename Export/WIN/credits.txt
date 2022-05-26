@@ -1,0 +1,33 @@
+explosion by Kutejnikov
+ - author - Kutejnikov - Pavel Kutejnikov
+ - CC0 - https://creativecommons.org/publicdomain/zero/1.0/legalcode
+ - https://opengameart.org/content/explosion-8
+ - explosion.wav
+ - explosion.ogg
+ - no changes to original work were made, exported to ogg format
+
+Laser Fire by dklon
+ - author - dklon - Devin Watson
+ - CC-BY 3.0 - https://creativecommons.org/licenses/by/3.0/legalcode
+ - laser1.wav
+ - laser.ogg
+ - https://opengameart.org/content/laser-fire
+ - no changes to original work were made, exported to ogg format
+
+Space Ace by Sudocolon
+ - author - Sudocolon
+ - CC0 - https://creativecommons.org/publicdomain/zero/1.0/legalcode
+ - Logisector Intro.mp3
+ - intro.ogg
+ - https://opengameart.org/content/space-ace
+ - only first circa 23 seconds are used, applied fade in and out, other than that
+   no changes were made to the original piece, exported to ogg format
+
+Tower Defense Theme by DST
+ - author DST - Markus Heichelbech
+ - CC0 - https://creativecommons.org/publicdomain/zero/1.0/legalcode
+ - DST-TowerDefenseTheme.mp3
+ - soundtrack.ogg
+ - https://opengameart.org/content/tower-defense-theme
+ - applied fade in and out, other than that no changes were made to the
+   original piece, exported to ogg format

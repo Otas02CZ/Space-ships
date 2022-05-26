@@ -1,18 +1,20 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Textures/vesmir_1.png" type="Texture" id=1]
+[ext_resource path="res://video/uvodni_video.webm" type="VideoStream" id=1]
 [ext_resource path="res://Fonts/IBM_Plex_Mono_Regular.tres" type="DynamicFont" id=2]
 [ext_resource path="res://Fonts/IBM_Plex_Mono_Regular_Small.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Skripty/Uvitani.gd" type="Script" id=4]
+[ext_resource path="res://Textures/tlacitko.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/IBM_Plex_Mono_Regular_Tiny.tres" type="DynamicFont" id=6]
 
 [node name="Uvitani" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="Pozadi" type="Sprite" parent="."]
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 0, 1280, 720 )
+[node name="Video" type="VideoPlayer" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+stream = ExtResource( 1 )
+autoplay = true
 
 [node name="Uvod" type="Label" parent="."]
 margin_left = 194.0
@@ -23,14 +25,6 @@ custom_fonts/font = ExtResource( 2 )
 text = "Welcome to Space - ships"
 align = 1
 valign = 1
-
-[node name="Zapni" type="Button" parent="."]
-margin_left = 543.0
-margin_top = 559.0
-margin_right = 707.0
-margin_bottom = 649.0
-custom_fonts/font = ExtResource( 2 )
-text = "PLAY"
 
 [node name="Popisy" type="Label" parent="."]
 margin_left = 286.0
@@ -45,4 +39,30 @@ text = "An asteroid-like space shooter.
  - you have 6 lives, earn as much score as you can!"
 autowrap = true
 
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 523.0
+margin_top = 547.0
+margin_right = 779.0
+margin_bottom = 675.0
+texture = ExtResource( 5 )
+
+[node name="Zapni" type="Button" parent="."]
+margin_left = 530.0
+margin_top = 555.0
+margin_right = 770.0
+margin_bottom = 664.0
+custom_fonts/font = ExtResource( 2 )
+text = "PLAY"
+flat = true
+
+[node name="Kredity" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 672.0
+margin_right = 1277.0
+margin_bottom = 828.0
+custom_fonts/font = ExtResource( 6 )
+text = "Credits: Intro theme by Sudocolon, Main soundtrack by DST, Explosion effect by Kutejnikov and Laser fire by dklon, more information in file credits.txt or on website http://www.otakarkoci.funsite.cz/credits_for_all_games/space_ships.txt"
+autowrap = true
+
+[connection signal="finished" from="Video" to="." method="_on_Video_finished"]
 [connection signal="pressed" from="Zapni" to="." method="_on_Zapni_pressed"]

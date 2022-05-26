@@ -91,4 +91,5 @@ func _on_Hrac_hit_kamen():
 	zivoty -= 1
 	$CanvasLayer/ZivotyHodnota.text = str(zivoty)
 	if (zivoty==0):
+		Audio.nastav_intro()
 		get_tree().change_scene("res://Sceny/Dokonceni.tscn")

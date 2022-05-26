@@ -48,6 +48,7 @@ region_enabled = true
 
 [node name="Hrac" parent="." instance=ExtResource( 2 )]
 position = Vector2( 335, 145 )
+rotation_speed = 4
 
 [node name="Camera2D" type="Camera2D" parent="Hrac"]
 current = true

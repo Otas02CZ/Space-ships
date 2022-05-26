@@ -13,7 +13,7 @@ var moving = true
 
 func trefen_srazen():
 	Audio.hraj_vybuch()
-	#moving = false
+	moving = false
 	efekty.emitting = true
 	set_deferred("monitorable", false)
 	set_deferred("monitoring", false)

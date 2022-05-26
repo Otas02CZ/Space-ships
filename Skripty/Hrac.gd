@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
-var speed = 200
-var rotation_speed = 1.5
+export var speed = 200
+export var rotation_speed = 2
 var velocity = Vector2()
 var rotation_dir = 0
 onready var pozice = get_node("Vystrely")
