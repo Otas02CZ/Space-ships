@@ -12,31 +12,31 @@ script = ExtResource( 4 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 640, 380 )
+region_rect = Rect2( 0, 0, 1280, 720 )
 
 [node name="Uvod" type="Label" parent="."]
-margin_left = 93.0
-margin_top = 41.0
-margin_right = 549.0
-margin_bottom = 83.0
+margin_left = 194.0
+margin_top = 44.0
+margin_right = 1106.0
+margin_bottom = 128.0
 custom_fonts/font = ExtResource( 2 )
 text = "Welcome to Space - ships"
 align = 1
 valign = 1
 
 [node name="Zapni" type="Button" parent="."]
-margin_left = 284.0
-margin_top = 276.0
-margin_right = 372.0
-margin_bottom = 324.0
+margin_left = 543.0
+margin_top = 559.0
+margin_right = 707.0
+margin_bottom = 649.0
 custom_fonts/font = ExtResource( 2 )
 text = "PLAY"
 
 [node name="Popisy" type="Label" parent="."]
-margin_left = 61.0
-margin_top = 105.0
-margin_right = 574.0
-margin_bottom = 229.0
+margin_left = 286.0
+margin_top = 149.0
+margin_right = 1045.0
+margin_bottom = 555.0
 custom_fonts/font = ExtResource( 3 )
 text = "An asteroid-like space shooter. 
  - shoot with space

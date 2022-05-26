@@ -79,30 +79,31 @@ custom_fonts/font = ExtResource( 7 )
 text = "Lives: "
 
 [node name="ZivotyHodnota" type="Label" parent="CanvasLayer"]
-margin_left = 70.0
+margin_left = 146.0
 margin_top = -1.0
-margin_right = 140.0
-margin_bottom = 21.0
+margin_right = 216.0
+margin_bottom = 49.0
 custom_fonts/font = ExtResource( 7 )
 text = "0"
 
 [node name="SkorePopis" type="Label" parent="CanvasLayer"]
-margin_left = 175.0
+margin_left = 330.0
 margin_top = 1.0
-margin_right = 245.0
-margin_bottom = 23.0
+margin_right = 468.0
+margin_bottom = 51.0
 custom_fonts/font = ExtResource( 7 )
 text = "Score:"
 
 [node name="SkoreHodnota" type="Label" parent="CanvasLayer"]
-margin_left = 251.0
+margin_left = 480.0
 margin_top = 1.0
-margin_right = 321.0
-margin_bottom = 23.0
+margin_right = 550.0
+margin_bottom = 51.0
 custom_fonts/font = ExtResource( 7 )
 text = "0"
 
 [node name="NOVY_KAMEN" type="Timer" parent="."]
+wait_time = 0.5
 autostart = true
 
 [connection signal="hit_kamen" from="Hrac" to="." method="_on_Hrac_hit_kamen"]

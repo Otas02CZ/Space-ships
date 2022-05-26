@@ -2,12 +2,13 @@ extends Node2D
 
 # PROMENNE
 # - exportovane promenne
-export (int) var speed = 200
-export (float) var rotation_speed = 1.5
-export (int) var max_zivotu = 6
+export var speed = 200
+export var rotation_speed = 1.5
+export var max_zivotu = 6
+var smer = Array()
 # - predpripravene promenne odkazujici na poduzly uzlu Hra
-export (Vector2) onready var map_size = Vector2(1920, 1080)
-var viewport = Vector2(640, 380)
+export (Vector2) var map_size = Vector2(1920, 1080)
+var viewport = Vector2(1280, 720)
 onready var hrac = get_node("Hrac")
 onready var kamera = get_node("Hrac/Camera2D")
 onready var ohraniceni = get_node("Ohraniceni/OhraniceniKolize")
@@ -29,6 +30,8 @@ var zivoty
 
 func nastav_hru():
 	hrac.global_position = Vector2(map_size.x/2, map_size.y/2)
+	hrac.speed = 0
+	$Hrac.speed = 0
 	pozadi_1.set_region_rect(Rect2(Vector2.ZERO, map_size))
 	pozadi_2.set_region_rect(Rect2(Vector2.ZERO, map_size))
 	pozadi_3.set_region_rect(Rect2(Vector2.ZERO, map_size))
@@ -51,6 +54,7 @@ func nastav_hru():
 	hrac.rotation_speed = rotation_speed
 
 func _ready():
+	hrac.global_position = Vector2.ZERO
 	nastav_hru()
 	zivoty = max_zivotu
 	$CanvasLayer/ZivotyHodnota.text = str(zivoty)

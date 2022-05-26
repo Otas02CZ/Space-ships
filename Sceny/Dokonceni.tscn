@@ -5,52 +5,58 @@
 [ext_resource path="res://Fonts/IBM_Plex_Mono_Regular.tres" type="DynamicFont" id=3]
 [ext_resource path="res://Textures/vesmir_1.png" type="Texture" id=4]
 
-[node name="Dokonceni" type="Node2D"]
+[node name="Dokonceni" type="Control"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 4 )
 centered = false
 region_enabled = true
-region_rect = Rect2( 0, 0, 640, 380 )
+region_rect = Rect2( 0, 0, 1280, 720 )
 
 [node name="Uvod" type="Label" parent="."]
-margin_left = 96.0
-margin_top = 22.0
-margin_right = 571.0
-margin_bottom = 64.0
+anchor_left = 0.5
+anchor_top = 0.6
+anchor_right = 0.5
+anchor_bottom = 0.6
+margin_left = 186.0
+margin_top = 96.0
+margin_right = 1136.0
+margin_bottom = 188.0
 custom_fonts/font = ExtResource( 3 )
 text = "You have been out-smashed"
+align = 1
+valign = 1
 
 [node name="PopisSkore" type="Label" parent="."]
-margin_left = 226.0
-margin_top = 109.0
-margin_right = 386.0
-margin_bottom = 131.0
+margin_left = 415.0
+margin_top = 280.0
+margin_right = 681.0
+margin_bottom = 322.0
 custom_fonts/font = ExtResource( 1 )
 text = "Your score is:"
 
 [node name="HodnotaSkore" type="Label" parent="."]
-margin_left = 402.0
-margin_top = 109.0
-margin_right = 488.0
-margin_bottom = 131.0
+margin_left = 784.0
+margin_top = 280.0
+margin_right = 870.0
+margin_bottom = 330.0
 custom_fonts/font = ExtResource( 1 )
 text = "0"
 
 [node name="play" type="Button" parent="."]
-margin_left = 169.0
-margin_top = 217.0
-margin_right = 228.0
-margin_bottom = 247.0
+margin_left = 200.0
+margin_top = 480.0
+margin_right = 433.0
+margin_bottom = 528.0
 custom_fonts/font = ExtResource( 1 )
 text = "Play Again"
 
 [node name="exit" type="Button" parent="."]
-margin_left = 337.0
-margin_top = 216.0
-margin_right = 419.0
-margin_bottom = 247.0
+margin_left = 860.0
+margin_top = 480.0
+margin_right = 948.0
+margin_bottom = 528.0
 custom_fonts/font = ExtResource( 1 )
 text = "Exit"
 

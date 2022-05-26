@@ -22,11 +22,12 @@ script = ExtResource( 1 )
 [node name="Kolize" type="CollisionShape2D" parent="."]
 
 [node name="Efekty" type="Particles2D" parent="."]
+position = Vector2( 1, 1 )
 emitting = false
 amount = 140
 lifetime = 2.0
 one_shot = true
-explosiveness = 0.83
+explosiveness = 0.72
 randomness = 1.0
 process_material = SubResource( 1 )
 
