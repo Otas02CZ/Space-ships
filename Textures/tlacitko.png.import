@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tlacitko.png-e53155d483135361c77151f3384e0895.stex"
+path="res://.import/tlacitko.png-a6581ba9bf37632ad73c79f10b5b6fb2.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/tlacitko.png"
-dest_files=[ "res://.import/tlacitko.png-e53155d483135361c77151f3384e0895.stex" ]
+source_file="res://textures/tlacitko.png"
+dest_files=[ "res://.import/tlacitko.png-a6581ba9bf37632ad73c79f10b5b6fb2.stex" ]
 
 [params]
 

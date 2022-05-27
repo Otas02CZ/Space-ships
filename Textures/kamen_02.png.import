@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/kamen_02.png-b7b55eb0a6cc1fc81dc4b66e44de098e.stex"
+path="res://.import/kamen_02.png-2fd0d76c00475780c77e975df4b67d14.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/kamen_02.png"
-dest_files=[ "res://.import/kamen_02.png-b7b55eb0a6cc1fc81dc4b66e44de098e.stex" ]
+source_file="res://textures/kamen_02.png"
+dest_files=[ "res://.import/kamen_02.png-2fd0d76c00475780c77e975df4b67d14.stex" ]
 
 [params]
 

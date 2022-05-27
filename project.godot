@@ -21,13 +21,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Space-ships"
-run/main_scene="res://Sceny/Uvitani.tscn"
+run/main_scene="res://scenes/Uvitani.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Skore="*res://Skripty/Skore.gd"
-Audio="*res://Sceny/Audio.tscn"
+Skore="*res://scripts/Skore.gd"
+Audio="*res://scenes/Audio.tscn"
 
 [display]
 

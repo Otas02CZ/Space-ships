@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/vesmir_1.png-59e9633c8e5a9b6121dad7cbb45a6662.stex"
+path="res://.import/vesmir_1.png-bd1f84b1ec5d4bd08631cfe4a595892b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/vesmir_1.png"
-dest_files=[ "res://.import/vesmir_1.png-59e9633c8e5a9b6121dad7cbb45a6662.stex" ]
+source_file="res://textures/vesmir_1.png"
+dest_files=[ "res://.import/vesmir_1.png-bd1f84b1ec5d4bd08631cfe4a595892b.stex" ]
 
 [params]
 

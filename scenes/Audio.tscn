@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://audio/laser.ogg" type="AudioStream" id=1]
+[ext_resource path="res://audio/explosion.ogg" type="AudioStream" id=2]
+[ext_resource path="res://audio/intro.ogg" type="AudioStream" id=3]
+[ext_resource path="res://scripts/Audio.gd" type="Script" id=4]
+
+[node name="Audio" type="Node"]
+script = ExtResource( 4 )
+
+[node name="Hudba" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -16.0
+
+[node name="Strileni" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -32.0
+
+[node name="Vybuch" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -20.0
+
+[connection signal="finished" from="Hudba" to="." method="_on_Hudba_finished"]

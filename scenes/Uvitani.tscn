@@ -1,0 +1,68 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/IBM_Plex_Mono_Regular.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/IBM_Plex_Mono_Regular_Small.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/IBM_Plex_Mono_Regular_Tiny.tres" type="DynamicFont" id=3]
+[ext_resource path="res://video/uvodni_video.webm" type="VideoStream" id=4]
+[ext_resource path="res://textures/tlacitko.png" type="Texture" id=5]
+[ext_resource path="res://scripts/Uvitani.gd" type="Script" id=6]
+
+[node name="Uvitani" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Video" type="VideoPlayer" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+stream = ExtResource( 4 )
+autoplay = true
+
+[node name="Uvod" type="Label" parent="."]
+margin_left = 194.0
+margin_top = 44.0
+margin_right = 1106.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 1 )
+text = "Welcome to Space - ships"
+align = 1
+valign = 1
+
+[node name="Popisy" type="Label" parent="."]
+margin_left = 286.0
+margin_top = 149.0
+margin_right = 1045.0
+margin_bottom = 555.0
+custom_fonts/font = ExtResource( 2 )
+text = "An asteroid-like space shooter. 
+ - shoot with space
+ - rotate a/s or right/left
+ - move front back with w/s or front/back
+ - you have 6 lives, earn as much score as you can!"
+autowrap = true
+
+[node name="PozadiTlacitka" type="TextureRect" parent="."]
+margin_left = 523.0
+margin_top = 547.0
+margin_right = 779.0
+margin_bottom = 675.0
+texture = ExtResource( 5 )
+
+[node name="Zapni" type="Button" parent="."]
+margin_left = 530.0
+margin_top = 555.0
+margin_right = 770.0
+margin_bottom = 664.0
+custom_fonts/font = ExtResource( 1 )
+text = "PLAY"
+flat = true
+
+[node name="Kredity" type="Label" parent="."]
+margin_left = 2.0
+margin_top = 672.0
+margin_right = 1277.0
+margin_bottom = 828.0
+custom_fonts/font = ExtResource( 3 )
+text = "Credits: Intro theme by Sudocolon, Main soundtrack by DST, Explosion effect by Kutejnikov and Laser fire by dklon, more information in file credits.txt or on website http://www.otakarkoci.funsite.cz/credits_for_all_games/space_ships.txt"
+autowrap = true
+
+[connection signal="finished" from="Video" to="." method="_on_Video_finished"]
+[connection signal="pressed" from="Zapni" to="." method="_on_Zapni_pressed"]

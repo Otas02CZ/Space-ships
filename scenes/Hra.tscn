@@ -1,0 +1,111 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://textures/vesmir_1.png" type="Texture" id=1]
+[ext_resource path="res://scenes/Hrac.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Hra.gd" type="Script" id=3]
+[ext_resource path="res://textures/vesmir_3.png" type="Texture" id=4]
+[ext_resource path="res://textures/vesmir_2.png" type="Texture" id=5]
+[ext_resource path="res://textures/vesmir_4.png" type="Texture" id=6]
+[ext_resource path="res://fonts/IBM_Plex_Mono_Regular_Small.tres" type="DynamicFont" id=7]
+
+[node name="Hra" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ScrollovaciPozadi" type="ParallaxBackground" parent="."]
+
+[node name="Vrstva_1" type="ParallaxLayer" parent="ScrollovaciPozadi"]
+motion_scale = Vector2( 0.11, 0.11 )
+motion_mirroring = Vector2( 1920, 1080 )
+
+[node name="Textura_1" type="Sprite" parent="ScrollovaciPozadi/Vrstva_1"]
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+
+[node name="Vrstva_2" type="ParallaxLayer" parent="ScrollovaciPozadi"]
+motion_scale = Vector2( 0.22, 0.22 )
+
+[node name="Textura_2" type="Sprite" parent="ScrollovaciPozadi/Vrstva_2"]
+texture = ExtResource( 5 )
+centered = false
+region_enabled = true
+
+[node name="Vrstva_3" type="ParallaxLayer" parent="ScrollovaciPozadi"]
+motion_scale = Vector2( 0.33, 0.33 )
+
+[node name="Textura_3" type="Sprite" parent="ScrollovaciPozadi/Vrstva_3"]
+texture = ExtResource( 4 )
+centered = false
+region_enabled = true
+
+[node name="Vrstva_4" type="ParallaxLayer" parent="ScrollovaciPozadi"]
+motion_scale = Vector2( 0.44, 0.44 )
+
+[node name="Textura_4" type="Sprite" parent="ScrollovaciPozadi/Vrstva_4"]
+texture = ExtResource( 6 )
+centered = false
+region_enabled = true
+
+[node name="Hrac" parent="." instance=ExtResource( 2 )]
+position = Vector2( 335, 145 )
+rotation_speed = 4
+
+[node name="Camera2D" type="Camera2D" parent="Hrac"]
+current = true
+process_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 760
+
+[node name="Ohraniceni" type="StaticBody2D" parent="."]
+visible = false
+
+[node name="OhraniceniKolize" type="CollisionPolygon2D" parent="Ohraniceni"]
+build_mode = 1
+polygon = PoolVector2Array( 0, 0, 0, 0, 0, 0, 0, 0 )
+
+[node name="Projektily" type="Node2D" parent="."]
+
+[node name="Kameny" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ZivotyPopis" type="Label" parent="CanvasLayer"]
+margin_left = 1.0
+margin_top = -1.0
+margin_right = 71.0
+margin_bottom = 21.0
+custom_fonts/font = ExtResource( 7 )
+text = "Lives: "
+
+[node name="ZivotyHodnota" type="Label" parent="CanvasLayer"]
+margin_left = 146.0
+margin_top = -1.0
+margin_right = 216.0
+margin_bottom = 49.0
+custom_fonts/font = ExtResource( 7 )
+text = "0"
+
+[node name="SkorePopis" type="Label" parent="CanvasLayer"]
+margin_left = 330.0
+margin_top = 1.0
+margin_right = 468.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 7 )
+text = "Score:"
+
+[node name="SkoreHodnota" type="Label" parent="CanvasLayer"]
+margin_left = 480.0
+margin_top = 1.0
+margin_right = 550.0
+margin_bottom = 51.0
+custom_fonts/font = ExtResource( 7 )
+text = "0"
+
+[node name="NOVY_KAMEN" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="hit_kamen" from="Hrac" to="." method="_on_Hrac_hit_kamen"]
+[connection signal="timeout" from="NOVY_KAMEN" to="." method="_on_NOVY_KAMEN_timeout"]
