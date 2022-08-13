@@ -22,9 +22,9 @@ onready var vrstva_3 = get_node("ScrollovaciPozadi/Vrstva_3")
 onready var vrstva_4 = get_node("ScrollovaciPozadi/Vrstva_4")
 onready var kameny = get_node("Kameny")
 # - predpripravene promenne prednactenych kamenu
-onready var kamen_1 = preload("res://Sceny/Kamen_1.tscn")
-onready var kamen_2 = preload("res://Sceny/Kamen_2.tscn")
-onready var kamen_3 = preload("res://Sceny/Kamen_3.tscn")
+onready var kamen_1 = preload("res://scenes/Kamen_1.tscn")
+onready var kamen_2 = preload("res://scenes/Kamen_2.tscn")
+onready var kamen_3 = preload("res://scenes/Kamen_3.tscn")
 # - normalni promenne"
 var zivoty
 
@@ -92,4 +92,4 @@ func _on_Hrac_hit_kamen():
 	$CanvasLayer/ZivotyHodnota.text = str(zivoty)
 	if (zivoty==0):
 		Audio.nastav_intro()
-		get_tree().change_scene("res://Sceny/Dokonceni.tscn")
+		get_tree().change_scene("res://scenes/Dokonceni.tscn")

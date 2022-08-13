@@ -8,7 +8,7 @@ func _ready():
 
 func _on_play_pressed():
 	Audio.nastav_soundtrack()
-	get_tree().change_scene("res://Sceny/Hra.tscn")
+	get_tree().change_scene("res://scenes/Hra.tscn")
 
 
 func _on_exit_pressed():

@@ -5,7 +5,7 @@ export var rotation_speed = 2
 var velocity = Vector2()
 var rotation_dir = 0
 onready var pozice = get_node("Vystrely")
-onready var scn_strela = preload("res://Sceny/Projectile.tscn")
+onready var scn_strela = preload("res://scenes/Projectile.tscn")
 
 signal hit_kamen
 
