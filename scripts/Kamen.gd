@@ -1,9 +1,9 @@
 extends Area2D
 
-onready var efekty = get_node("Efekty")
-onready var zapni_efekty = get_node("ZapniEfekty")
-onready var textura = get_node("Textura")
-onready var kolize = get_node("Kolize")
+@onready var efekty = get_node("Efekty")
+@onready var zapni_efekty = get_node("ZapniEfekty")
+@onready var textura = get_node("Textura")
+@onready var kolize = get_node("Kolize")
 var limity = Vector2.ZERO
 var cilova_pozice = Vector2.ZERO
 var smer

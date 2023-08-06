@@ -1,7 +1,7 @@
 extends Area2D
 
 var speed = 750
-onready var timer = get_node("Timer")
+@onready var timer = get_node("Timer")
 
 func _ready():
 	timer.start()

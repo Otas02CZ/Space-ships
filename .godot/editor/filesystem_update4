@@ -1,0 +1,10 @@
+res://default_env.tres
+res://scenes/Dokonceni.tscn
+res://scenes/Uvitani.tscn
+res://scenes/Audio.tscn
+res://Fonts/IBM_large.tres
+res://scenes/Hra.tscn
+res://scenes/Hrac.tscn
+res://scripts/Hrac.gd
+res://scripts/Hra.gd
+res://scenes/Kamen.tscn

@@ -1,8 +1,8 @@
 extends Node
 
-onready var strileni = get_node("Strileni")
-onready var vybuch = get_node("Vybuch")
-onready var hudba = get_node("Hudba")
+@onready var strileni = get_node("Strileni")
+@onready var vybuch = get_node("Vybuch")
+@onready var hudba = get_node("Hudba")
 
 var soundtrack = preload("res://audio/soundtrack.ogg")
 var intro = preload("res://audio/intro.ogg")

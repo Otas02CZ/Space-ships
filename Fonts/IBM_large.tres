@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dm848n083seqq"]
+
+[ext_resource type="FontFile" uid="uid://dernugxmm3jgn" path="res://Fonts/IBMPlexMono-Regular.ttf" id="1_ryney"]
+
+[resource]
+base_font = ExtResource("1_ryney")
+variation_embolden = 1.39

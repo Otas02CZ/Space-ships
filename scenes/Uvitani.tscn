@@ -1,68 +1,71 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://d3ana1ah4evg0"]
 
-[ext_resource path="res://fonts/IBM_Plex_Mono_Regular.tres" type="DynamicFont" id=1]
-[ext_resource path="res://fonts/IBM_Plex_Mono_Regular_Small.tres" type="DynamicFont" id=2]
-[ext_resource path="res://fonts/IBM_Plex_Mono_Regular_Tiny.tres" type="DynamicFont" id=3]
-[ext_resource path="res://video/uvodni_video.webm" type="VideoStream" id=4]
-[ext_resource path="res://textures/tlacitko.png" type="Texture" id=5]
-[ext_resource path="res://scripts/Uvitani.gd" type="Script" id=6]
+[ext_resource type="VideoStream" path="res://video/uvodni_video.ogv" id="2_erete"]
+[ext_resource type="FontVariation" uid="uid://dm848n083seqq" path="res://Fonts/IBM_large.tres" id="3_vp7qo"]
+[ext_resource type="FontVariation" uid="uid://c6w5rtfhu3rrk" path="res://Fonts/IBM_normal.tres" id="4_jrlt4"]
+[ext_resource type="Texture2D" uid="uid://d2usikvl6qkec" path="res://textures/tlacitko.png" id="5"]
+[ext_resource type="Script" path="res://scripts/Uvitani.gd" id="6"]
+[ext_resource type="FontVariation" uid="uid://bdvkqawbnenfn" path="res://Fonts/IBM_button.tres" id="6_vybdl"]
+[ext_resource type="FontVariation" uid="uid://g00g6t7otxqk" path="res://Fonts/IBM_small.tres" id="7_7rlu6"]
 
 [node name="Uvitani" type="Node2D"]
-script = ExtResource( 6 )
+script = ExtResource("6")
 
-[node name="Video" type="VideoPlayer" parent="."]
-margin_right = 1280.0
-margin_bottom = 720.0
-stream = ExtResource( 4 )
+[node name="Video" type="VideoStreamPlayer" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+stream = ExtResource("2_erete")
 autoplay = true
 
 [node name="Uvod" type="Label" parent="."]
-margin_left = 194.0
-margin_top = 44.0
-margin_right = 1106.0
-margin_bottom = 128.0
-custom_fonts/font = ExtResource( 1 )
+offset_left = 194.0
+offset_top = 44.0
+offset_right = 1106.0
+offset_bottom = 128.0
+theme_override_fonts/font = ExtResource("3_vp7qo")
+theme_override_font_sizes/font_size = 42
 text = "Welcome to Space - ships"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Popisy" type="Label" parent="."]
-margin_left = 286.0
-margin_top = 149.0
-margin_right = 1045.0
-margin_bottom = 555.0
-custom_fonts/font = ExtResource( 2 )
+offset_left = 307.0
+offset_top = 190.0
+offset_right = 1072.0
+offset_bottom = 508.0
+theme_override_fonts/font = ExtResource("4_jrlt4")
+theme_override_font_sizes/font_size = 24
 text = "An asteroid-like space shooter. 
  - shoot with space
  - rotate a/s or right/left
  - move front back with w/s or front/back
  - you have 6 lives, earn as much score as you can!"
-autowrap = true
 
 [node name="PozadiTlacitka" type="TextureRect" parent="."]
-margin_left = 523.0
-margin_top = 547.0
-margin_right = 779.0
-margin_bottom = 675.0
-texture = ExtResource( 5 )
+offset_left = 516.0
+offset_top = 463.0
+offset_right = 772.0
+offset_bottom = 591.0
+texture = ExtResource("5")
 
 [node name="Zapni" type="Button" parent="."]
-margin_left = 530.0
-margin_top = 555.0
-margin_right = 770.0
-margin_bottom = 664.0
-custom_fonts/font = ExtResource( 1 )
+offset_left = 522.0
+offset_top = 470.0
+offset_right = 762.0
+offset_bottom = 579.0
+theme_override_fonts/font = ExtResource("6_vybdl")
+theme_override_font_sizes/font_size = 24
 text = "PLAY"
 flat = true
 
 [node name="Kredity" type="Label" parent="."]
-margin_left = 2.0
-margin_top = 672.0
-margin_right = 1277.0
-margin_bottom = 828.0
-custom_fonts/font = ExtResource( 3 )
+offset_left = 2.0
+offset_top = 672.0
+offset_right = 1277.0
+offset_bottom = 722.0
+theme_override_fonts/font = ExtResource("7_7rlu6")
 text = "Credits: Intro theme by Sudocolon, Main soundtrack by DST, Explosion effect by Kutejnikov and Laser fire by dklon, more information in file credits.txt or on website http://www.otakarkoci.funsite.cz/credits_for_all_games/space_ships.txt"
-autowrap = true
+autowrap_mode = 3
 
 [connection signal="finished" from="Video" to="." method="_on_Video_finished"]
 [connection signal="pressed" from="Zapni" to="." method="_on_Zapni_pressed"]

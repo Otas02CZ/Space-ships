@@ -1,11 +1,11 @@
-extends KinematicBody2D
+extends CharacterBody2D
 
-export var speed = 200
-export var rotation_speed = 2
-var velocity = Vector2()
+@export var speed = 200
+@export var rotation_speed = 2
+#var velocity = Vector2()
 var rotation_dir = 0
-onready var pozice = get_node("Vystrely")
-onready var scn_strela = preload("res://scenes/Projectile.tscn")
+@onready var pozice = get_node("Vystrely")
+@onready var scn_strela = preload("res://scenes/Projectile.tscn")
 
 signal hit_kamen
 
@@ -29,10 +29,12 @@ func get_input():
 func _physics_process(delta):
 	get_input()
 	rotation += rotation_dir * rotation_speed * delta
-	velocity = move_and_slide(velocity)
+	set_velocity(velocity)
+	move_and_slide()
+	velocity = velocity
 
 func vystrel():
-	var strela = scn_strela.instance()
+	var strela = scn_strela.instantiate()
 	$"/root/Hra/Projektily".add_child(strela)
 	strela.transform = pozice.global_transform
 

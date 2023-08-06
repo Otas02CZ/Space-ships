@@ -1,0 +1,7 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bdvkqawbnenfn"]
+
+[ext_resource type="FontFile" uid="uid://dernugxmm3jgn" path="res://Fonts/IBMPlexMono-Regular.ttf" id="1_78qp3"]
+
+[resource]
+base_font = ExtResource("1_78qp3")
+variation_embolden = 1.6

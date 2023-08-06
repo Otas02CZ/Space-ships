@@ -1,13 +1,14 @@
 [remap]
 
 importer="wav"
-type="AudioStreamSample"
-path="res://.import/untitled.wav-3899a38e6c92870e61a73b27ca9c33a7.sample"
+type="AudioStreamWAV"
+uid="uid://bekxdntfl3wh2"
+path="res://.godot/imported/untitled.wav-3899a38e6c92870e61a73b27ca9c33a7.sample"
 
 [deps]
 
 source_file="res://kdenlive_projekty/untitled.wav"
-dest_files=[ "res://.import/untitled.wav-3899a38e6c92870e61a73b27ca9c33a7.sample" ]
+dest_files=["res://.godot/imported/untitled.wav-3899a38e6c92870e61a73b27ca9c33a7.sample"]
 
 [params]
 
@@ -17,5 +18,7 @@ force/max_rate=false
 force/max_rate_hz=44100
 edit/trim=false
 edit/normalize=false
-edit/loop=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
 compress/mode=0

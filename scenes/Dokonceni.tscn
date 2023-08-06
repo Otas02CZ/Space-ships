@@ -1,81 +1,95 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=3 uid="uid://y4s0875y3bbj"]
 
-[ext_resource path="res://fonts/IBM_Plex_Mono_Regular_Small.tres" type="DynamicFont" id=1]
-[ext_resource path="res://scripts/Dokonceni.gd" type="Script" id=2]
-[ext_resource path="res://fonts/IBM_Plex_Mono_Regular.tres" type="DynamicFont" id=3]
-[ext_resource path="res://video/uvodni_video.webm" type="VideoStream" id=4]
-[ext_resource path="res://textures/tlacitko.png" type="Texture" id=5]
+[ext_resource type="Script" path="res://scripts/Dokonceni.gd" id="2"]
+[ext_resource type="VideoStream" path="res://video/uvodni_video.ogv" id="2_cfwd4"]
+[ext_resource type="FontVariation" uid="uid://dm848n083seqq" path="res://Fonts/IBM_large.tres" id="3_hn47y"]
+[ext_resource type="FontVariation" uid="uid://c6w5rtfhu3rrk" path="res://Fonts/IBM_normal.tres" id="4_4357o"]
+[ext_resource type="Texture2D" uid="uid://d2usikvl6qkec" path="res://textures/tlacitko.png" id="5"]
+[ext_resource type="FontVariation" uid="uid://bdvkqawbnenfn" path="res://Fonts/IBM_button.tres" id="6_afiwe"]
 
 [node name="Dokonceni" type="Control"]
-script = ExtResource( 2 )
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("2")
 
-[node name="Video" type="VideoPlayer" parent="."]
-margin_right = 1280.0
-margin_bottom = 720.0
-stream = ExtResource( 4 )
+[node name="Video" type="VideoStreamPlayer" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+stream = ExtResource("2_cfwd4")
 autoplay = true
 
 [node name="Uvod" type="Label" parent="."]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.6
 anchor_right = 0.5
 anchor_bottom = 0.6
-margin_left = 186.0
-margin_top = 96.0
-margin_right = 1136.0
-margin_bottom = 188.0
-custom_fonts/font = ExtResource( 3 )
+offset_left = 186.0
+offset_top = 96.0
+offset_right = 1136.0
+offset_bottom = 188.0
+theme_override_fonts/font = ExtResource("3_hn47y")
+theme_override_font_sizes/font_size = 32
 text = "You have been out-smashed"
-align = 1
-valign = 1
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PopisSkore" type="Label" parent="."]
-margin_left = 415.0
-margin_top = 280.0
-margin_right = 681.0
-margin_bottom = 322.0
-custom_fonts/font = ExtResource( 1 )
+layout_mode = 0
+offset_left = 449.0
+offset_top = 280.0
+offset_right = 715.0
+offset_bottom = 311.0
+theme_override_fonts/font = ExtResource("4_4357o")
+theme_override_font_sizes/font_size = 21
 text = "Your score is:"
 
 [node name="HodnotaSkore" type="Label" parent="."]
-margin_left = 784.0
-margin_top = 280.0
-margin_right = 870.0
-margin_bottom = 330.0
-custom_fonts/font = ExtResource( 1 )
+layout_mode = 0
+offset_left = 695.0
+offset_top = 283.0
+offset_right = 756.0
+offset_bottom = 313.0
+theme_override_fonts/font = ExtResource("4_4357o")
+theme_override_font_sizes/font_size = 20
 text = "0"
 
 [node name="pozadi_play" type="TextureRect" parent="."]
-margin_left = 196.0
-margin_top = 483.0
-margin_right = 449.0
-margin_bottom = 542.0
-texture = ExtResource( 5 )
-expand = true
+layout_mode = 0
+offset_left = 196.0
+offset_top = 483.0
+offset_right = 449.0
+offset_bottom = 542.0
+texture = ExtResource("5")
+expand_mode = 1
 
 [node name="pozadi_exit" type="TextureRect" parent="."]
-margin_left = 860.0
-margin_top = 480.0
-margin_right = 963.0
-margin_bottom = 536.0
-texture = ExtResource( 5 )
-expand = true
+layout_mode = 0
+offset_left = 860.0
+offset_top = 480.0
+offset_right = 974.0
+offset_bottom = 547.0
+texture = ExtResource("5")
+expand_mode = 1
 
 [node name="play" type="Button" parent="."]
-margin_left = 202.0
-margin_top = 483.0
-margin_right = 444.0
-margin_bottom = 539.0
-custom_fonts/font = ExtResource( 1 )
+layout_mode = 0
+offset_left = 202.0
+offset_top = 483.0
+offset_right = 444.0
+offset_bottom = 539.0
+theme_override_fonts/font = ExtResource("6_afiwe")
 text = "Play Again"
 flat = true
 
 [node name="exit" type="Button" parent="."]
-margin_left = 860.0
-margin_top = 480.0
-margin_right = 964.0
-margin_bottom = 536.0
-custom_fonts/font = ExtResource( 1 )
+layout_mode = 0
+offset_left = 860.0
+offset_top = 480.0
+offset_right = 972.0
+offset_bottom = 546.0
+theme_override_fonts/font = ExtResource("6_afiwe")
 text = "Exit"
 flat = true
 
