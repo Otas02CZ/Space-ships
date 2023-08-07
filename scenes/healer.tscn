@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://xddgiox1ln72"]
+
+[ext_resource type="Texture2D" uid="uid://drriy88nu1d1y" path="res://Textures/healer.png" id="1_al0ud"]
+[ext_resource type="Script" path="res://scripts/healer.gd" id="1_dukdo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y6ndm"]
+radius = 21.0
+
+[node name="Healer" type="Area2D"]
+collision_layer = 8
+script = ExtResource("1_dukdo")
+
+[node name="Texture" type="Sprite2D" parent="."]
+texture = ExtResource("1_al0ud")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -1)
+shape = SubResource("CircleShape2D_y6ndm")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

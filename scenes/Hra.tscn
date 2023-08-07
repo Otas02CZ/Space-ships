@@ -1,15 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bthrdu1jvn2e1"]
+[gd_scene load_steps=8 format=3 uid="uid://bthrdu1jvn2e1"]
 
-[ext_resource type="Texture2D" uid="uid://cd4hx81l4uvfi" path="res://textures/vesmir_1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cd4hx81l4uvfi" path="res://Textures/vesmir_1.png" id="1"]
 [ext_resource type="PackedScene" uid="uid://di6hmgk0twjy" path="res://scenes/Hrac.tscn" id="2"]
-[ext_resource type="Texture2D" uid="uid://cd4hx81l4uvfi" path="res://Textures/vesmir_1.png" id="2_eetwu"]
 [ext_resource type="Script" path="res://scripts/Hra.gd" id="3"]
-[ext_resource type="Texture2D" uid="uid://0l7k45q7w2d8" path="res://Textures/vesmir_2.png" id="3_qe7m6"]
-[ext_resource type="Texture2D" uid="uid://csg7k5bmk121s" path="res://textures/vesmir_3.png" id="4"]
-[ext_resource type="Texture2D" uid="uid://csg7k5bmk121s" path="res://Textures/vesmir_3.png" id="4_llqy0"]
-[ext_resource type="Texture2D" uid="uid://0l7k45q7w2d8" path="res://textures/vesmir_2.png" id="5"]
-[ext_resource type="Texture2D" uid="uid://bjxqcqv765wxy" path="res://Textures/vesmir_4.png" id="5_r5sit"]
-[ext_resource type="Texture2D" uid="uid://bjxqcqv765wxy" path="res://textures/vesmir_4.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://csg7k5bmk121s" path="res://Textures/vesmir_3.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://0l7k45q7w2d8" path="res://Textures/vesmir_2.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bjxqcqv765wxy" path="res://Textures/vesmir_4.png" id="6"]
 [ext_resource type="FontVariation" uid="uid://c6w5rtfhu3rrk" path="res://Fonts/IBM_normal.tres" id="7_agyay"]
 
 [node name="Hra" type="Node2D"]
@@ -20,26 +16,26 @@ visible = false
 
 [node name="Vesmir1" type="Sprite2D" parent="Pozadi"]
 position = Vector2(640, 360)
-texture = ExtResource("2_eetwu")
+texture = ExtResource("1")
 region_enabled = true
 region_rect = Rect2(1280, 720, 1280, 720)
 
 [node name="Vesmir2" type="Sprite2D" parent="Pozadi"]
 texture_repeat = 2
 position = Vector2(640, 360)
-texture = ExtResource("3_qe7m6")
+texture = ExtResource("5")
 region_enabled = true
 region_rect = Rect2(-1304, -608, 2648, 1128)
 
 [node name="Vesmir3" type="Sprite2D" parent="Pozadi"]
 visible = false
 position = Vector2(237, 282)
-texture = ExtResource("4_llqy0")
+texture = ExtResource("4")
 
 [node name="Vesmir4" type="Sprite2D" parent="Pozadi"]
 visible = false
 position = Vector2(237, 282)
-texture = ExtResource("5_r5sit")
+texture = ExtResource("6")
 
 [node name="ScrollovaciPozadi" type="ParallaxBackground" parent="."]
 
@@ -103,7 +99,13 @@ polygon = PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0)
 
 [node name="Kameny" type="Node2D" parent="."]
 
+[node name="Healers" type="Node2D" parent="."]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 510.0
+offset_bottom = 36.0
 
 [node name="ZivotyPopis" type="Label" parent="CanvasLayer"]
 offset_left = 1.0
@@ -141,9 +143,15 @@ theme_override_fonts/font = ExtResource("7_agyay")
 theme_override_font_sizes/font_size = 24
 text = "0"
 
+[node name="NEW_HEALER" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
 [node name="NOVY_KAMEN" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
 
+[connection signal="hit_heal" from="Hrac" to="." method="_on_hrac_hit_heal"]
 [connection signal="hit_kamen" from="Hrac" to="." method="_on_Hrac_hit_kamen"]
+[connection signal="timeout" from="NEW_HEALER" to="." method="_on_new_healer_timeout"]
 [connection signal="timeout" from="NOVY_KAMEN" to="." method="_on_NOVY_KAMEN_timeout"]

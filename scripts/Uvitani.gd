@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @onready var video = get_node("Video")
 

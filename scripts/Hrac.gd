@@ -8,6 +8,7 @@ var rotation_dir = 0
 @onready var scn_strela = preload("res://scenes/Projectile.tscn")
 
 signal hit_kamen
+signal hit_heal
 
 func get_input():
 	rotation_dir = 0
@@ -41,3 +42,7 @@ func vystrel():
 
 func _on_Oblast_area_entered(_area):
 	emit_signal("hit_kamen")
+
+
+func _on_healers_check_area_entered(_area):
+	emit_signal("hit_heal")

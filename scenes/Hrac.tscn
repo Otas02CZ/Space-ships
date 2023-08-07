@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://di6hmgk0twjy"]
 
-[ext_resource type="Texture2D" uid="uid://cm0ob8yl8lujg" path="res://textures/hrac.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cm0ob8yl8lujg" path="res://Textures/hrac.png" id="1"]
 [ext_resource type="Script" path="res://scripts/Hrac.gd" id="2"]
 
 [node name="Hrac" type="CharacterBody2D"]
@@ -25,4 +25,11 @@ collision_mask = 2
 rotation = 1.5708
 polygon = PackedVector2Array(-0.426668, -7.96592, -8.10427, 3.72775, -1.29283, 1.91658, 7.88098, 3.96392)
 
+[node name="HealersCheck" type="Area2D" parent="."]
+collision_mask = 8
+
+[node name="HealersCheckCollision" type="CollisionPolygon2D" parent="HealersCheck"]
+polygon = PackedVector2Array(8, 0, -4, -8, -2, -1, -4, 8)
+
 [connection signal="area_entered" from="Oblast" to="." method="_on_Oblast_area_entered"]
+[connection signal="area_entered" from="HealersCheck" to="." method="_on_healers_check_area_entered"]

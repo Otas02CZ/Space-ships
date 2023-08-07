@@ -1,1 +1,8 @@
+Control
+Panel
+CollisionPolygon2D
+Area2D
 Node2D
+Timer
+CollisionShape2D
+Sprite2D

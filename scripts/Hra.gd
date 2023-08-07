@@ -21,10 +21,12 @@ var viewport = Vector2(1280, 720)
 @onready var vrstva_3 = get_node("ScrollovaciPozadi/Vrstva_3")
 @onready var vrstva_4 = get_node("ScrollovaciPozadi/Vrstva_4")
 @onready var kameny = get_node("Kameny")
+@onready var healers = get_node("Healers")
 # - predpripravene promenne prednactenych kamenu
 @onready var kamen_1 = preload("res://scenes/Kamen_1.tscn")
 @onready var kamen_2 = preload("res://scenes/Kamen_2.tscn")
 @onready var kamen_3 = preload("res://scenes/Kamen_3.tscn")
+@onready var healer_preload = preload("res://scenes/healer.tscn")
 # - normalni promenne"
 var zivoty
 
@@ -79,6 +81,9 @@ func vytvor_pozici_pro_kamen():
 			continue
 		return Vector2(x, y)
 
+func create_healer():
+	pass
+
 func _on_NOVY_KAMEN_timeout():
 	var kamen = vytvor_kamen()
 	kamen.cilova_pozice = hrac.global_position
@@ -93,3 +98,15 @@ func _on_Hrac_hit_kamen():
 	if (zivoty==0):
 		Audio.nastav_intro()
 		get_tree().change_scene_to_file("res://scenes/Dokonceni.tscn")
+
+
+func _on_new_healer_timeout():
+	var healer = healer_preload.instantiate()
+	healer.global_position = vytvor_pozici_pro_kamen()
+	healers.add_child(healer)
+
+
+func _on_hrac_hit_heal():
+	if (zivoty != max_zivotu):
+		zivoty += 1
+		$CanvasLayer/ZivotyHodnota.text = str(zivoty)

@@ -3,12 +3,14 @@
 [ext_resource type="VideoStream" path="res://video/uvodni_video.ogv" id="2_erete"]
 [ext_resource type="FontVariation" uid="uid://dm848n083seqq" path="res://Fonts/IBM_large.tres" id="3_vp7qo"]
 [ext_resource type="FontVariation" uid="uid://c6w5rtfhu3rrk" path="res://Fonts/IBM_normal.tres" id="4_jrlt4"]
-[ext_resource type="Texture2D" uid="uid://d2usikvl6qkec" path="res://textures/tlacitko.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d2usikvl6qkec" path="res://Textures/tlacitko.png" id="5"]
 [ext_resource type="Script" path="res://scripts/Uvitani.gd" id="6"]
 [ext_resource type="FontVariation" uid="uid://bdvkqawbnenfn" path="res://Fonts/IBM_button.tres" id="6_vybdl"]
 [ext_resource type="FontVariation" uid="uid://g00g6t7otxqk" path="res://Fonts/IBM_small.tres" id="7_7rlu6"]
 
-[node name="Uvitani" type="Node2D"]
+[node name="Uvitani" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("6")
 
 [node name="Video" type="VideoStreamPlayer" parent="."]
@@ -27,6 +29,12 @@ theme_override_font_sizes/font_size = 42
 text = "Welcome to Space - ships"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 294.0
+offset_top = 184.0
+offset_right = 1085.0
+offset_bottom = 382.0
 
 [node name="Popisy" type="Label" parent="."]
 offset_left = 307.0
@@ -57,6 +65,11 @@ theme_override_fonts/font = ExtResource("6_vybdl")
 theme_override_font_sizes/font_size = 24
 text = "PLAY"
 flat = true
+
+[node name="Panel2" type="Panel" parent="."]
+offset_top = 669.0
+offset_right = 1281.0
+offset_bottom = 720.0
 
 [node name="Kredity" type="Label" parent="."]
 offset_left = 2.0

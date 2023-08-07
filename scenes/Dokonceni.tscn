@@ -4,7 +4,7 @@
 [ext_resource type="VideoStream" path="res://video/uvodni_video.ogv" id="2_cfwd4"]
 [ext_resource type="FontVariation" uid="uid://dm848n083seqq" path="res://Fonts/IBM_large.tres" id="3_hn47y"]
 [ext_resource type="FontVariation" uid="uid://c6w5rtfhu3rrk" path="res://Fonts/IBM_normal.tres" id="4_4357o"]
-[ext_resource type="Texture2D" uid="uid://d2usikvl6qkec" path="res://textures/tlacitko.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d2usikvl6qkec" path="res://Textures/tlacitko.png" id="5"]
 [ext_resource type="FontVariation" uid="uid://bdvkqawbnenfn" path="res://Fonts/IBM_button.tres" id="6_afiwe"]
 
 [node name="Dokonceni" type="Control"]
@@ -34,6 +34,13 @@ theme_override_font_sizes/font_size = 32
 text = "You have been out-smashed"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 280.0
+offset_right = 824.0
+offset_bottom = 310.0
 
 [node name="PopisSkore" type="Label" parent="."]
 layout_mode = 0
